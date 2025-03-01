@@ -68,14 +68,14 @@ if category:
 
     if category == "Length":
         st.markdown("### Convert Length Units")
-        from_unit = st.selectbox("From Unit", ["meters", "kilometers", "centimeters", "millimeters", "miles", "yards", "feet", "inches"])
-        to_unit = st.selectbox("To Unit", ["meters", "kilometers", "centimeters", "millimeters", "miles", "yards", "feet", "inches"])
+        from_unit = st.selectbox("From Unit", list(length_converter(1, 'meters', 'meters').keys()))
+        to_unit = st.selectbox("To Unit", list(length_converter(1, 'meters', 'meters').keys()))
         result = length_converter(value, from_unit, to_unit)
 
     elif category == "Weight":
         st.markdown("### Convert Weight Units")
-        from_unit = st.selectbox("From Unit", ["grams", "kilograms", "pounds", "ounces"])
-        to_unit = st.selectbox("To Unit", ["grams", "kilograms", "pounds", "ounces"])
+        from_unit = st.selectbox("From Unit", list(weight_converter(1, 'grams', 'grams').keys()))
+        to_unit = st.selectbox("To Unit", list(weight_converter(1, 'grams', 'grams').keys()))
         result = weight_converter(value, from_unit, to_unit)
 
     elif category == "Temperature":
@@ -94,4 +94,5 @@ if category:
         st.success(f"Converted Value: {result:.2f} {to_unit}")
 
     if st.button("Back"):
-        st.experimental_rerun()
+        st.empty()
+        st.experimental_set_query_params()
