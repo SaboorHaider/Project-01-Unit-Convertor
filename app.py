@@ -92,6 +92,3 @@ if category:
 
     if st.button("Convert"):
         st.success(f"Converted Value: {result:.2f} {to_unit}")
-
-    if st.button("Back"):
-        st.experimental_rerun()
