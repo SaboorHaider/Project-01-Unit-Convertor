@@ -48,7 +48,7 @@ def time_converter(value, from_unit, to_unit):
 
 st.set_page_config(layout="wide")
 
-st.title("🔧 Unit Converter App")
+st.title("Unit Converter App")
 
 st.markdown("## Welcome to the Ultimate Unit Converter App")
 st.write("Easily convert between different units of measurement — whether it's length, weight, temperature, or time.")
